@@ -102,7 +102,6 @@ import Data.Typelevel.Num.Sets (class Nat, class Pos, toInt, toInt')
 import Data.Typelevel.Undefined (undefined)
 import Data.Unfoldable (class Unfoldable)
 import Data.Argonaut (class EncodeJson, class DecodeJson)
-import Data.Generic.Rep (class Generic)
 import Partial.Unsafe (unsafePartial)
 import Test.QuickCheck (class Arbitrary, arbitrary, class Coarbitrary, coarbitrary)
 import Type.Proxy (Proxy(..))
@@ -315,8 +314,6 @@ sortBy f (Vec v) = Vec (Array.sortBy f v)
 -- | Reverse a vector.
 reverse :: forall s a. Vec s a -> Vec s a
 reverse (Vec v) = Vec (Array.reverse v)
-
-derive instance genericVec :: Generic a a' => Generic (Vec s a) _
 
 derive newtype instance eqVec :: Eq a => Eq (Vec s a)
 
