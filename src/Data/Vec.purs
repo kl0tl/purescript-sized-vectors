@@ -111,6 +111,8 @@ import Type.Proxy (Proxy(..))
 newtype Vec s a
   = Vec (Array a)
 
+type role Vec nominal representational
+
 -- | An empty vector.
 empty :: forall a. Vec D0 a
 empty = Vec []
